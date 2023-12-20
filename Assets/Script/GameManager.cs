@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.Play("Click");
             player.OnEndReached += SpawnRoads;
         }
 
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        AudioManager.instance.Play("Click");
         player.GetComponent<Animator>().SetBool("IsGameStarted", true);
         IsGameStarted = true;
         Pausebtn.SetActive(true);
@@ -66,23 +68,27 @@ public class GameManager : MonoBehaviour
     }
     public void PauseGame()
     {
+        AudioManager.instance.Play("Click");
         Time.timeScale = 0;
         PausePanel.SetActive(true);
         IsGameStarted = false;
     }
     public void Resume()
     {
+        AudioManager.instance.Play("Click");
         Time.timeScale = 1;
         PausePanel.SetActive(false);
         IsGameStarted = true;
     }
     public void Restart()
     {
+        AudioManager.instance.Play("Click");
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
     public void GameOver()
     {
+        AudioManager.instance.Play("GameOver");
         player.GetComponent<Rigidbody>().isKinematic = true;
         Camera.main.transform.DOShakePosition(0.2f);
         GameoverPanel.SetActive(true);
