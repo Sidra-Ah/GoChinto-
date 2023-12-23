@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+//using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class GameManager : MonoBehaviour
     public static bool IsGameStarted;
     public float PlayerSpeed;
     public GameObject Asteriod;
-
+    //public Text Scoretxt, finaltxt, highscoretxt;
+    //float score;
     public GameObject playBtn, Pausebtn, GameoverPanel, PausePanel;
     public static GameManager instance;
 
@@ -24,6 +26,8 @@ public class GameManager : MonoBehaviour
     //}
     void Start()
     {
+        //score = 0;
+        instance = this;
         // Ensure that the player reference is assigned in the Unity Editor
         if (player == null)
         {
@@ -32,11 +36,13 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            AudioManager.instance.Play("Click");
+            Debug.Log("Play.");
+            //AudioManager.inst.Play("Click");
             player.OnEndReached += SpawnRoads;
+
         }
 
-        instance = this;
+
     }
     private void SpawnRoads()
     {
@@ -51,30 +57,36 @@ public class GameManager : MonoBehaviour
     {
         if (IsGameStarted)
         {
+            //   score += Time.deltaTime;
+            //  Scoretxt.text = "SCORE: " + (int) score;
             //player.transform.Translate(Vector3.forward * PlayerSpeed);
             player.GetComponent<Rigidbody>().velocity = Vector3.forward * PlayerSpeed;
             Asteriod.GetComponent<Rigidbody>().velocity = Vector3.forward * PlayerSpeed;
         }
-      
+
     }
 
     public void StartGame()
     {
-        AudioManager.instance.Play("Click");
+        Debug.Log("StartGame");
         player.GetComponent<Animator>().SetBool("IsGameStarted", true);
         IsGameStarted = true;
         Pausebtn.SetActive(true);
         playBtn.SetActive(false);
+        AudioManager.instance.Play("GameMusic");
     }
     public void PauseGame()
     {
-        AudioManager.instance.Play("Click");
+
         Time.timeScale = 0;
         PausePanel.SetActive(true);
         IsGameStarted = false;
+        AudioManager.instance.PauseGameMusic();
+        AudioManager.instance.Play("Click");
     }
     public void Resume()
     {
+         AudioManager.instance.ResumeGameMusic();
         AudioManager.instance.Play("Click");
         Time.timeScale = 1;
         PausePanel.SetActive(false);
@@ -82,17 +94,25 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
-        AudioManager.instance.Play("Click");
+        //AudioManager.inst.Play("Click");
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
+        IsGameStarted = false;
+
     }
     public void GameOver()
     {
-        AudioManager.instance.Play("GameOver");
+        // finaltxt.text = "Your Score: " + (int)score;
+        // if ((int)score > PlayerPrefs.GetInt("HighScore", 0))
+        //  {
+        //     PlayerPrefs.SetInt("HighScore", (int)score);
+        //  };
+        //  highscoretxt.text = "High Score: " + PlayerPrefs.GetInt("HighScore");
         player.GetComponent<Rigidbody>().isKinematic = true;
-        Camera.main.transform.DOShakePosition(0.2f);
+        Camera.main.transform.DOShakePosition(0.4f, 2);
         GameoverPanel.SetActive(true);
         IsGameStarted = false;
+        AudioManager.instance.Play("GameOver");
     }
     //private void OnDisable()
     //{

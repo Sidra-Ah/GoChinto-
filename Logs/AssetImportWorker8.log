@@ -11,19 +11,19 @@ C:\Program Files\Unity\Hub\Editor\2020.3.36f1\Editor\Unity.exe
 -name
 AssetImportWorker8
 -projectPath
-D:/GamesPracticeprojects/GoChinto!
+C:/Users/sidra/Desktop/GoChinto--master
 -logFile
 Logs/AssetImportWorker8.log
 -srvPort
-49451
-Successfully changed project path to: D:/GamesPracticeprojects/GoChinto!
-D:/GamesPracticeprojects/GoChinto!
+62493
+Successfully changed project path to: C:/Users/sidra/Desktop/GoChinto--master
+C:/Users/sidra/Desktop/GoChinto--master
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 1262.61 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 766.45 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.36f1 (71f96b79b9f0)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.36f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/GamesPracticeprojects/GoChinto!/Assets
+[Subsystems] Discovering subsystems at path C:/Users/sidra/Desktop/GoChinto--master/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
@@ -35,13 +35,45 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.36f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.36f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56856
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56764
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.36f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.061738 seconds.
+Registered in 0.021701 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1327.13 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 863.87 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in 11.432 seconds
+Domain Reload Profiling:
+	ReloadAssembly (11435ms)
+		BeginReloadAssembly (1394ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (13ms)
+		EndReloadAssembly (9227ms)
+			LoadAssemblies (1356ms)
+			RebuildTransferFunctionScriptingTraits (7ms)
+			SetupTypeCache (1802ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (1021ms)
+			SetupLoadedEditorAssemblies (4451ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (52ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (865ms)
+				BeforeProcessingInitializeOnLoad (199ms)
+				ProcessInitializeOnLoadAttributes (1964ms)
+				ProcessInitializeOnLoadMethodAttributes (1365ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (4ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.036333 seconds.
+Begin MonoManager ReloadAssembly
