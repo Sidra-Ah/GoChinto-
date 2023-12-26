@@ -29,7 +29,8 @@ public class Player : MonoBehaviour
     private void Update()
     {
         // Check for touch input
-        if (Input.touchCount > 0)
+        // if (Input.touchCount > 0)
+        if (GameManager.IsGameStarted && Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
@@ -77,57 +78,7 @@ public class Player : MonoBehaviour
     }
 
 
-    //private void Update()
-    //{
-    //    // Check for touch input
-    //    if (Input.touchCount > 0)
-    //    {
-    //        Touch touch = Input.GetTouch(0);
 
-    //        // Check for the beginning of a touch
-    //        if (touch.phase == TouchPhase.Began)
-    //        {
-    //            // Assuming GameManager.IsGameStarted is a boolean variable in the GameManager script
-    //            GameManager.IsGameStarted = true;
-
-    //            // Set the "IsGameStarted" parameter in the animator to true
-    //            animator.SetBool("IsGameStarted", true);
-    //        }
-
-    //        // Check for a tap or swipe up for jumping
-    //        if (touch.phase == TouchPhase.Began || (touch.phase == TouchPhase.Moved && touch.deltaPosition.y > 0))
-    //        {
-    //            animator.SetTrigger("Jump");
-    //        }
-    //    }
-
-    //    // Check for touch input
-    //    if (Input.touchCount > 0)
-    //    {
-    //        Touch touch = Input.GetTouch(0);
-
-    //        if (touch.phase == TouchPhase.Began)
-    //        {
-    //            touchStartPos = touch.position;
-    //        }
-    //        else if (touch.phase == TouchPhase.Ended)
-    //        {
-    //            touchEndPos = touch.position;
-    //            float swipeDistance = touchEndPos.x - touchStartPos.x;
-
-    //            // Check for a left swipe
-    //            if (swipeDistance < -swipeThreshold)
-    //            {
-    //                SwipeLeft();
-    //            }
-    //            // Check for a right swipe
-    //            else if (swipeDistance > swipeThreshold)
-    //            {
-    //                SwipeRight();
-    //            }
-    //        }
-    //    }
-    //}
 
     private void SwipeLeft()
     {

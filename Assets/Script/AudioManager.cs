@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     public static AudioManager instance;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         instance = this;
         foreach (Sound s in sounds)
@@ -29,8 +29,9 @@ public class AudioManager : MonoBehaviour
             s.AudioSource.volume = s.Volume;
             s.AudioSource.loop = s.Loop;
         }
-
+      
     }
+
 
     public void Play(string Name)
     {
